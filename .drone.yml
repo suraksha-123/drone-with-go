@@ -1,20 +1,19 @@
 kind: pipeline
 name: default
 workspace:
-  base: /go
+  base: /tmp
   path: "."
-  
+
 steps:
-- na
-
-me: test
-  image: golang
+- name: test
+  image: node
   commands:
-  - go test
-  - go build
+  - npm install
+  - npm test && nmp run dist
 
-- name: publish
-  image: plugins/docker
+- name: upload
+  image: plugins/s3
   settings:
-    repo: octocat/hello-world
-    tags: [ latest, 1.0, 1 ]
+    bucket: code-deploy12345
+    source: public/**/*
+    target: /target/location
