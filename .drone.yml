@@ -12,4 +12,4 @@ steps:
 - name: build
   image: golang:latest
   commands:
-    - go build 
+    - go build
