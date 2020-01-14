@@ -2,4 +2,4 @@
 
 An example of how to test Go code with Drone.
 
-Hello-drone
+Hello-drone.
