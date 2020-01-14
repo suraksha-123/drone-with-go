@@ -9,7 +9,6 @@ steps:
   image: node
   commands:
   - npm install
-  - npm test && nmp run dist
 
 - name: upload
   image: plugins/s3
