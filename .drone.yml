@@ -5,7 +5,9 @@ workspace:
   path: "."
   
 steps:
-- name: test
+- na
+
+me: test
   image: golang
   commands:
   - go test
@@ -16,5 +18,3 @@ steps:
   settings:
     repo: octocat/hello-world
     tags: [ latest, 1.0, 1 ]
-
-
