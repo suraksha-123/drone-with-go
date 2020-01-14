@@ -1,15 +1,16 @@
 kind: pipeline
-name: default
-workspace:
-  base: /go
-  path: "."
+
 steps:
 - name: test
-  image: golang:latest
+  image: golang
   commands:
-    - go vet
-    - go test -v -cover
-- name: build
-  image: golang:latest
-  commands:
-    - go build
+  - go test
+  - go build
+
+- name: publish
+  image: plugins/docker
+  settings:
+    repo: octocat/hello-world
+    tags: [ latest, 1.0, 1 ]
+
+
